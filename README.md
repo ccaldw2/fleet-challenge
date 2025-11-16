@@ -27,4 +27,7 @@ Input validation is currently somewhat inconsistent - while all fields have some
 The file upload behavior for receipts is not where it could be - as of right now, a user can upload a file to the browser, but only the name of that file is ultimately archived. A filereducer was initally planned, but was cut for time. Implementing this would better simulate production file storage (e.g. via S3 buckets) in which files are stored away from other submission data, and fetched with a unique ID stored on the associated submission.
 
 [Github Repo](https://github.com/ccaldw2/fleet-challenge)
-[CodeSandbox](https://codesandbox.io/p/github/ccaldw2/fleet-challenge/main)
+
+[CodeSandbox Env](https://codesandbox.io/p/github/ccaldw2/fleet-challenge/main)
+
+[Demo](https://7t6n7h-4173.csb.app/submission)
