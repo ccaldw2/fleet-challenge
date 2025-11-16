@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import type { Question } from "./questions";
+import { useAppDispatch } from '../hooks';
+import { addSubmission } from '../reducers/submissionReducer';
 
 export const useConversation = (questions: Question[]) => {
+  const dispatch = useAppDispatch();
 
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [conversation, setConversation] = useState<{ Q: string; A: string }[]>([]);
@@ -50,7 +53,7 @@ export const useConversation = (questions: Question[]) => {
   }
 
   const handleSubmit = () => {
-    console.log("Submitting form data:", formData);
+    dispatch(addSubmission(formData));
     setSubmitted(true);
   };
 

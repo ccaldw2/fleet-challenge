@@ -75,7 +75,7 @@ const Submission = () => {
                 variant="outlined"
                 color="primary"
                 fullWidth
-                onClick={() => navigate("/session-data")}
+                onClick={() => navigate("/archive")}
               >
                 Archive
               </Button>

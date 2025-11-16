@@ -1,11 +1,15 @@
 import './App.css'
-import Navbar from './components/Navbar.component';
-import DrawerMenu from './components/DrawerMenu.component';
+import { useState } from 'react';
 import { Toolbar, Box, Container, useMediaQuery, useTheme } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from 'react';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+
+import Navbar from './components/Navbar.component';
+import DrawerMenu from './components/DrawerMenu.component';
 import Submission from './views/Submission';
 import Archive from './views/Archive';
+
 
 
 function App() {
@@ -16,7 +20,7 @@ function App() {
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
   
   return (
-    <>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Router>
         <Navbar handleDrawerToggle={handleDrawerToggle} isMobile={isMobile} />
         <DrawerMenu mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
@@ -51,7 +55,7 @@ function App() {
         </Box>
       </Router>
 
-    </>
+    </LocalizationProvider>
   )
 }
 
